@@ -14,9 +14,9 @@ export default class menu extends React.Component {
     }
     render() { 
         return ( 
-            <Navbar bg="primary" expand="lg">
+            <Navbar bg="primary" expand="lg" id="minavbar">
                 <Container>
-                    <Navbar.Brand href="#home">Mi aplicativo </Navbar.Brand>
+                    <Navbar.Brand href="#home" id="navbarTitle"> Learn Thread - Dashboard </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
@@ -30,7 +30,7 @@ export default class menu extends React.Component {
                         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
-                    <DropdownButton id="dropdown-basic-button" title="usuario">
+                    <DropdownButton id="dropdown-basic-button" title="Carlos David D.">
                         <Dropdown.Header>
                             <FontAwesomeIcon icon={faUserCircle} />
                             <Dropdown.Item href="#/action-1"> Mi perfil </Dropdown.Item>

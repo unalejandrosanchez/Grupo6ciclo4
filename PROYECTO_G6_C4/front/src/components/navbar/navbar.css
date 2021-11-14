@@ -1,8 +1,15 @@
 .dropdown-header{
     font-size: 15px;
     display: flex;
-    justify-content: center,
+    justify-content: center;
 
+}
+
+/* #minavbar a{
+
+} */
+#navbarTitle{
+    color: white;
 }
 
 /* .dropdown-item{
