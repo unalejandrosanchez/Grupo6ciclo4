@@ -2,16 +2,10 @@
 import React from 'react';
 import { Container, Form, Button, Col, Row, Image } from 'react-bootstrap';
 import './login.css';
-import axios from 'axios';
-import {APIHOST as host} from '../app.json'
-import {isNull, isNUll} from 'util';
-import Cookies from 'universal-cookie';
-import {calculaEspiracionSesion} from '../helper/helper';
+// import axios from 'axios';
 
 // imagen de portada para login 
-import image1 from '../../public/img/loginBanner.png'
-
-const cookies = new Cookies();
+import image1 from '../../public/img/loginBanner.png';
 
 //Atajo tecaldo: ccc
 export default class login extends React.Component {

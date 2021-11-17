@@ -3,21 +3,26 @@ import React from 'react';
 import { Container, Form, Button, Col, Row, Image } from 'react-bootstrap';
 import './login.css';
 import axios from 'axios';
-import {APIHOST as host} from '../app.json'
-import {isNull, isNUll} from 'util';
+import {APIHOST as host} from '../../app.json'
+import {isNull} from 'util';
 import Cookies from 'universal-cookie';
 import {calculaEspiracionSesion} from '../helper/helper';
 
 // imagen de portada para login 
 import image1 from '../../public/img/loginBanner.png'
 
+import Loading from '../loading/loading';
+
 const cookies = new Cookies();
+
 
 //Atajo tecaldo: ccc
 export default class login extends React.Component {
     constructor(props) {
         super(props);
+        
         this.state = {  
+            loading: false,
             user: '',
             pass:'',
 
@@ -25,6 +30,8 @@ export default class login extends React.Component {
     }
 
     sigIn(){
+
+        this.setState( {loading:true} );
 
         axios.post(`${host}/usuarios/login`,{
             usuario : this.state.user,
@@ -43,9 +50,12 @@ export default class login extends React.Component {
                     expires: calculaEspiracionSesion(),
                 });
             }
+
+            this.setState( {loading:false} );
         })
         .catch((err) =>{
             console.log(err);
+            this.setState( {loading:false} );
         });
 
         // alert(`usuario:${this.state.user} - Contraseña: ${this.state.pass}`);
@@ -54,7 +64,7 @@ export default class login extends React.Component {
         return (  
             <Container id="login-container">
 
-
+                <Loading show={this.state.loading} />
 
                 <Row>   
                     <Col sm={12}  
@@ -75,6 +85,7 @@ export default class login extends React.Component {
 
                         <Row id="titulo-Login">
                             <Col>
+
                                 <h2> Login </h2> <br/>
                                 <p> Ingrese sus datos de cuenta para continuar. </p> 
                             </Col>

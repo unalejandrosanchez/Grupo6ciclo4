@@ -5,13 +5,15 @@ import Login from "../login/login";
 import Registro from "../login/registro";
 import Dashboard from "../dashboard/index";
 
+import PrivateRoute from "../auth/privateRoute";
+
 
 export default function AppRouter(){
     return(
         <Router> 
             <Switch>
                 <Route exact path= {["/", "/login"]} component={Login}/>
-                <Route exact path= {["/home", "/login"]} component={Home}/>
+                <PrivateRoute exact path= "/home" component={Home}/>
                 <Route exact path= {["/registro", "/login"]} component={Registro}/>
                 <Route exact path= {["/Dashboard", "/login"]} component={Dashboard}/>
                 

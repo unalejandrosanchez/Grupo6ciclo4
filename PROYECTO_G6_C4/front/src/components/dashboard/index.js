@@ -1,14 +1,14 @@
 //Atajo tecaldo: imr
 import React from 'react';
-import { Container, Button, Col, Row, Card, Figure} from 'react-bootstrap';
+import { Container, Col, Row, Card} from 'react-bootstrap';
 import './index.css';
-import Cookies from 'universal-cookie';
+
 import Menu from '../../components/navbar/navbar';
 
 // imagen de portada para login 
 import image1 from '../../public/img/learnAdd.png'
 
-const cookies = new Cookies();
+
 
 //Atajo tecaldo: ccc
 export default class login extends React.Component {
